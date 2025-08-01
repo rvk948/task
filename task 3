@@ -1,0 +1,17 @@
+import re
+
+def is_valid_email(email: str) -> bool:
+    # Define a regular expression for a basic email validation
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    
+    # Match the email string against the regex pattern
+    if re.match(pattern, email):
+        return True
+    else:
+        return False
+
+# Examples
+print(is_valid_email("example@test.com"))      # True
+print(is_valid_email("invalidemail.com"))      # False
+print(is_valid_email("name@domain"))           # False
+print(is_valid_email("name@domain.co.uk"))     # True
